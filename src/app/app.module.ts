@@ -8,6 +8,7 @@ import { StartComponent } from './components/start/start.component';
 import { SearchComponent } from './components/search/search.component';
 import { MyListComponent } from './components/my-list/my-list.component';
 import { MovieDetailsComponent } from './components/movie-details/movie-details.component';
+import { MovieService } from './service/movie.service';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,7 @@ import { MovieDetailsComponent } from './components/movie-details/movie-details.
     BrowserModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [MovieService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
