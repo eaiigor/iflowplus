@@ -1,7 +1,35 @@
 .navbar {
-    
-}
-
-.navbar a {
+    /* Seus estilos para a barra de navegação */
+  }
+  
+  .navbar h3 {
     color: #fff;
-}
+    font-size: 26px;
+    letter-spacing: 1px;
+  }
+  
+  .navbar a {
+    color: #fff; /* Cor dos links */
+    text-decoration: none;
+    position: relative;
+    display: inline-block;
+  }
+  
+  .navbar a::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #ffc107; /* Cor do sublinhado */
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+  }
+  
+  .navbar a:hover::after,
+  .navbar a.active::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+  }

@@ -1,25 +1,27 @@
 <nav class="navbar navbar-expand-lg fixed-top px-2" [ngStyle]="navbg">
-    <div class="container-fluid">
-      <a class="navbar-brand" routerLink="">iFlow +</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" routerLink="">Start</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" routerLink="search">Search</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" routerLink="my-list">My list</a>
-          </li>
-        </ul>
-        <div>
-          <span>My profile</span>
-          <img src="" alt="porfile picture">
-        </div>
+  <div class="container-fluid">
+    <h3 class="navbar-brand" routerLink="">iFlow <span class="text-warning">+</span></h3>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link" routerLink="" routerLinkActive="active"
+            [routerLinkActiveOptions]="{ exact: true }">Start</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="search" routerLinkActive="active">Search</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="my-list" routerLinkActive="active">My list</a>
+        </li>
+      </ul>
+      <div>
+        <span>My profile</span>
+        <img src="" alt="porfile picture">
       </div>
     </div>
-  </nav>
+  </div>
+</nav>
