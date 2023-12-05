@@ -76,16 +76,56 @@
 .movie-covers {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    gap: 10px;
     margin-top: 20px;
 }
 
 .movie-cover {
     overflow: hidden;
-}
+    position: relative;
+    cursor: pointer;
 
-.movie-cover img {
-    width: 100%;
-    height: auto;
-    display: block;
+    img {
+        width: 100%;
+        height: auto;
+        display: block;
+        transition: transform 0.3s ease-out;
+    }
+
+    .overlay {
+        transition: all 0.3s ease 0s;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        bottom: -100%; /* Inicialmente oculta abaixo da imagem */
+        left: 0;
+        background-image: linear-gradient(to top, rgb(0, 0, 0), rgba(0, 0, 0, 0));
+        color: white;
+        padding: 20px;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        opacity: 0;
+        pointer-events: none;
+        transition: all 0.5s ease; /* Adicionando uma transição para suavizar a animação */
+    }
+
+    .info {
+        transition: transform 0.5s ease; /* Adicionando uma transição para suavizar a animação */
+        transform: translateY(100%); /* Inicialmente oculta abaixo da imagem */
+    }
+
+    &:hover img {
+        transform: scale(1.1);
+    }
+
+    &:hover .overlay {
+        bottom: 0;
+        opacity: 1;
+        pointer-events: auto;
+    }
+
+    &:hover .info {
+        transform: translateY(0);
+    }
 }

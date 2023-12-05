@@ -9,6 +9,7 @@ import { MovieService } from 'src/app/service/movie.service';
 })
 export class StartComponent implements OnInit {
   movies: Movie[] = [];
+  showInfo: boolean = false;
 
   constructor(private movieService: MovieService) { }
 
@@ -18,5 +19,10 @@ export class StartComponent implements OnInit {
 
   load(): void {
     this.movies = this.movieService.getAllMovies();
+  }
+
+
+  showDetails(status: boolean) {
+    this.showInfo = status;
   }
 }
