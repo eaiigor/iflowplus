@@ -9,7 +9,8 @@ import { SearchComponent } from './components/search/search.component';
 import { MyListComponent } from './components/my-list/my-list.component';
 import { MovieDetailsComponent } from './components/movie-details/movie-details.component';
 import { MovieService } from './service/movie.service';
-import { FooterComponent } from './footer/footer.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -19,11 +20,12 @@ import { FooterComponent } from './footer/footer.component';
     SearchComponent,
     MyListComponent,
     MovieDetailsComponent,
-    FooterComponent
+    FooterComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [MovieService],
   bootstrap: [AppComponent]

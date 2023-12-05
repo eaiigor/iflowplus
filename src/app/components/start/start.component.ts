@@ -21,8 +21,11 @@ export class StartComponent implements OnInit {
     this.movies = this.movieService.getAllMovies();
   }
 
-
-  showDetails(status: boolean) {
+  showDetails(status: boolean): void {
     this.showInfo = status;
+  }
+
+  goMovieDetails(movie: Movie): void {
+    console.log(movie);
   }
 }

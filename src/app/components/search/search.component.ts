@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Movie } from 'src/app/interfaces/movie.model';
+import { MovieService } from 'src/app/service/movie.service';
 
 @Component({
   selector: 'app-search',
@@ -6,5 +8,19 @@ import { Component } from '@angular/core';
   styleUrls: ['./search.component.scss']
 })
 export class SearchComponent {
+  searchTerm: string = '';
+  searchResults: Movie[] = [];
 
+  constructor(private movieService: MovieService) {}
+
+  onSearch() {
+    if (this.searchTerm.trim() === '') {
+      this.searchResults = [];
+      return;
+    }
+
+    this.searchResults = this.movieService.getAllMovies().filter(movie =>
+      movie.title.toLowerCase().includes(this.searchTerm.toLowerCase())
+    );
+  }
 }

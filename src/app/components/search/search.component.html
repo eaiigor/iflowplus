@@ -1,1 +1,17 @@
-<p>search works!</p>
+<div style="margin-top: 10rem;">
+    <input type="text" [(ngModel)]="searchTerm" placeholder="Search by movie title" (input)="onSearch()">
+</div>
+
+<div *ngIf="searchResults.length > 0">
+    <h3>Search Results:</h3>
+    <ul>
+        <li *ngFor="let movie of searchResults">
+            <img [src]="movie.imageUrl" alt="{{ movie.title }}">
+            <h4>{{ movie.title }}</h4>
+            <p>{{ movie.description }}</p>
+        </li>
+    </ul>
+</div>
+<div *ngIf="searchResults.length === 0 && searchTerm.length > 0">
+    <p>No movies found with the title "{{ searchTerm }}"</p>
+</div>
