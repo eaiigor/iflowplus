@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Movie } from 'src/app/interfaces/movie.model';
 import { MovieService } from 'src/app/service/movie.service';
+import { MyListService } from 'src/app/service/my-list.service';
 
 @Component({
   selector: 'app-start',
@@ -13,7 +14,10 @@ export class StartComponent implements OnInit {
   showInfo: boolean = false;
   selectedSort: string = '';
 
-  constructor(private movieService: MovieService) { }
+  constructor(
+    private movieService: MovieService,
+    private myListService: MyListService
+  ) { }
 
   ngOnInit(): void {
     this.load();
@@ -41,5 +45,10 @@ export class StartComponent implements OnInit {
   orderByReleaseDate(): void {
     this.coverMovies.sort((a, b) => new Date(a.releasedDate).getTime() - new Date(b.releasedDate).getTime());
     this.selectedSort = 'releaseDate';
+  }
+
+  isMovieInList(movie: Movie): boolean {
+    const movieList = this.myListService.getMovieList();
+    return movieList.some((item: Movie) => item.id === movie.id);
   }
 }

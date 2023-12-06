@@ -64,7 +64,10 @@
                         <div class="overlay-infos">
                             <div class="info">
                                 <h5>{{ movie.title }}</h5>
-                                <p>⭐ {{ movie.rating }}</p>
+                                <div class="d-flex justify-content-between aling-items-center">
+                                    <p>⭐ {{ movie.rating }}</p>
+                                    <i *ngIf="isMovieInList(movie)" class="mdi mdi-eye-check-outline my-list-icon"></i>
+                                </div>
                             </div>
                         </div>
                     </div>
