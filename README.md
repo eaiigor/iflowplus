@@ -1,27 +1,48 @@
-# Iflowplus
+🇧🇷 ## **iFlow +** 📽️🎬
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.2.
+⭐ https://iflowplus.vercel.app/
 
-## Development server
+### Sobre ℹ️
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Um desafio que simula o front-end de um sistema de streaming.
 
-## Code scaffolding
+**Linguagens + Bibliotecas:**
+* Angular 16
+* Bootstrap
+* HTML
+* SCSS
+* Typescript
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+### Como rodar ❔
 
-## Build
+Você deve seguir os seguintes passos:
+1. Iniciar com comando ng serve no console
+2. Abrir o navegador na porta http://localhost:4200/
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+### _Keep coding_ 💻🖥️
 
-## Running unit tests
+==================================================================
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+🇺🇸 ## **iFlow +** 📽️🎬
 
-## Running end-to-end tests
+⭐ https://iflowplus.vercel.app/
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+### About ℹ️
 
-## Further help
+A challenge that simulates the front-end of a streaming system.
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+**Languages + Libraries:**
+
+* Angular 16
+* Bootstrap
+* HTML
+* SCSS
+* Typescript
+
+### How to run ❔
+
+You should follow these steps:
+1. Start with the command 'ng serve' in the console.
+2. Open the browser at http://localhost:4200/.
+
+### _Keep coding_ 💻🖥️
