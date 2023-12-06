@@ -27,7 +27,7 @@ import { FormsModule } from '@angular/forms';
     AppRoutingModule,
     FormsModule
   ],
-  providers: [MovieService],
+  providers: [MovieService, MyListComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

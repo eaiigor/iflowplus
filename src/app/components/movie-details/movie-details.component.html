@@ -28,7 +28,9 @@
                     <p style="text-align: justify;">{{ movie.description }}</p>
                     <div class="d-flex gap-4">
                         <button type="button" class="btn-youtube" (click)="scrollToVideo()">▶&nbsp; WATCH NOW</button>
-                        <button type="button" class="btn-add"><i class="mdi mdi-plus"></i></button>
+                        <button type="button" class="btn-add" (click)="toggleMovieStatus(movie)">
+                            <i [ngClass]="isMovieInList(movie) ? 'mdi mdi-check' : 'mdi mdi-plus green'"></i>
+                        </button>
                     </div>
                 </div>
             </div>

@@ -33,12 +33,12 @@ export class StartComponent implements OnInit {
     window.location.replace(`/movie/${movie.id}`);
   }
 
-  orderByTitle() {
+  orderByTitle(): void {
     this.coverMovies.sort((a, b) => a.title.localeCompare(b.title));
     this.selectedSort = 'title';
   }
 
-  orderByReleaseDate() {
+  orderByReleaseDate(): void {
     this.coverMovies.sort((a, b) => new Date(a.releasedDate).getTime() - new Date(b.releasedDate).getTime());
     this.selectedSort = 'releaseDate';
   }

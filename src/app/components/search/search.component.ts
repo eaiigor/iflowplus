@@ -13,7 +13,7 @@ export class SearchComponent {
 
   constructor(private movieService: MovieService) {}
 
-  onSearch() {
+  onSearch(): void {
     if (this.searchTerm.trim() === '') {
       this.searchResults = [];
       return;

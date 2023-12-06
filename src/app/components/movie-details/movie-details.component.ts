@@ -3,6 +3,7 @@ import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 import { ActivatedRoute } from '@angular/router';
 import { Movie } from 'src/app/interfaces/movie.model';
 import { MovieService } from 'src/app/service/movie.service';
+import { MyListService } from 'src/app/service/my-list.service';
 
 @Component({
   selector: 'app-movie-details',
@@ -32,7 +33,8 @@ export class MovieDetailsComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private movieService: MovieService,
-    private sanitizer: DomSanitizer
+    private sanitizer: DomSanitizer,
+    private myListService: MyListService
   ) { }
 
   ngOnInit(): void {
@@ -49,9 +51,26 @@ export class MovieDetailsComponent implements OnInit {
     return this.sanitizer.bypassSecurityTrustResourceUrl(trailerLink);
   }
 
-  scrollToVideo() {
+  scrollToVideo(): void {
     if (this.videoElement && this.videoElement.nativeElement) {
       this.videoElement.nativeElement.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+  }
+
+  addToMovieList(movie: Movie): void {
+    this.myListService.addMovieToList(movie);
+  }
+
+  isMovieInList(movie: Movie): boolean {
+    const movieList = this.myListService.getMovieList();
+    return movieList.some((item: Movie) => item.id === movie.id);
+  }
+
+  toggleMovieStatus(movie: Movie): void {
+    if (this.isMovieInList(movie)) {
+      this.myListService.removeMovieFromList(movie);
+    } else {
+      this.myListService.addMovieToList(movie);
     }
   }
 }

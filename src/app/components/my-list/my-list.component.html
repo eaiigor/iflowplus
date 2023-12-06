@@ -1,1 +1,17 @@
-<p>my-list works!</p>
+<div class="mt-6 w-100 animate__animated animate__fadeIn" style="min-height: 76vh;">
+    <div *ngIf="movieList.length > 0" class="px-3">
+        <h1 class="mt-4 mb-5">My list</h1>
+        <div class="movie-grid">
+            <div class="movie-card animate__animated animate__fadeIn"
+                *ngFor="let movie of movieList.slice(0, 5); let i = index" (click)="goToMovieDetails(movie)">
+                <img [src]="movie.imgCover" alt="{{ movie.title }}" class="img-fluid zoom-image">
+            </div>
+        </div>
+    </div>
+
+    <div *ngIf="movieList.length === 0" class="w-100 mt-6 px-3">
+        <div>
+            <p class="d-flex justify-content-center aling-items-center">No movies found with the title in your list</p>
+        </div>
+    </div>
+</div>
