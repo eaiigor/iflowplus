@@ -1,7 +1,13 @@
 .navbar h3 {
+  cursor: pointer;
   color: #fff;
   font-size: 26px;
   letter-spacing: 1px;
+  transition: 0.5s;
+}
+
+.navbar h3:hover {
+  color: #ffc107;
 }
 
 .navbar a {

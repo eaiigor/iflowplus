@@ -1,0 +1,67 @@
+.bg-search {
+    background: rgb(130, 130, 130);
+    background: linear-gradient(0deg, rgba(130, 130, 130, 1) 0%, rgba(0, 0, 0, 1) 100%);
+}
+
+.form-control {
+    border: none;
+    background-color: transparent;
+    height: 4em;
+    width: 100%;
+    color: #fff;
+    font-size: 22px;
+}
+
+.custom-input:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+.custom-input::placeholder {
+    color: #919191;
+}
+
+.mt-6 {
+    margin-top: 6rem;
+}
+
+.zoom-image {
+    border-radius: 8px;
+    transition: transform 0.3s ease-in-out, filter 0.3s ease-in-out;
+}
+
+.zoom-image:hover {
+    transform: scale(1.1);
+    filter: brightness(70%);
+    border: solid 2px #fff;
+}
+
+.px-3 {
+    padding-left: 3rem !important;
+    padding-right: 3rem !important;
+}
+
+.movie-grid {
+    display: flex;
+    flex-wrap: wrap;
+    margin: -10px;
+}
+
+.movie-card {
+    cursor: pointer;
+    width: 20%;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+@media screen and (max-width: 768px) {
+    .movie-card {
+        width: 33.33%;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .movie-card {
+        width: 50%;
+    }
+}

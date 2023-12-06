@@ -9,4 +9,5 @@ export interface Movie {
     trailerLink: string;
     imageUrl: string;
     bgImageUrl: string;
+    imgCover: string;
 }

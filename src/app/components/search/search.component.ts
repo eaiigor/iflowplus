@@ -23,4 +23,8 @@ export class SearchComponent {
       movie.title.toLowerCase().includes(this.searchTerm.toLowerCase())
     );
   }
+
+  goToMovieDetails(movie: Movie): void {
+    window.location.replace(`/movie/${movie.id}`);
+  }
 }

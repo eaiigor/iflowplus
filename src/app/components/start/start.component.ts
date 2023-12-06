@@ -8,8 +8,10 @@ import { MovieService } from 'src/app/service/movie.service';
   styleUrls: ['./start.component.scss']
 })
 export class StartComponent implements OnInit {
-  movies: Movie[] = [];
+  carouselMovies: Movie[] = [];
+  coverMovies: Movie[] = [];
   showInfo: boolean = false;
+  selectedSort: string = '';
 
   constructor(private movieService: MovieService) { }
 
@@ -18,14 +20,26 @@ export class StartComponent implements OnInit {
   }
 
   load(): void {
-    this.movies = this.movieService.getAllMovies();
+    const allMovies = this.movieService.getAllMovies();
+    this.carouselMovies = allMovies.slice(0, 5);
+    this.coverMovies = allMovies.slice(0, 5);
   }
 
   showDetails(status: boolean): void {
     this.showInfo = status;
   }
 
-  goMovieDetails(movie: Movie): void {
-    console.log(movie);
+  goToMovieDetails(movie: Movie): void {
+    window.location.replace(`/movie/${movie.id}`);
+  }
+
+  orderByTitle() {
+    this.coverMovies.sort((a, b) => a.title.localeCompare(b.title));
+    this.selectedSort = 'title';
+  }
+
+  orderByReleaseDate() {
+    this.coverMovies.sort((a, b) => new Date(a.releasedDate).getTime() - new Date(b.releasedDate).getTime());
+    this.selectedSort = 'releaseDate';
   }
 }

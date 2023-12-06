@@ -1,17 +1,23 @@
-<div style="margin-top: 10rem;">
-    <input type="text" [(ngModel)]="searchTerm" placeholder="Search by movie title" (input)="onSearch()">
-</div>
+<div class="mt-6 w-100 animate__animated animate__fadeIn" style="min-height: 76vh;">
+    <div class="w-100 bg-search px-3">
+        <input class="form-control custom-input" type="text" [(ngModel)]="searchTerm"
+            placeholder="Search by movie title" (input)="onSearch()">
+    </div>
 
-<div *ngIf="searchResults.length > 0">
-    <h3>Search Results:</h3>
-    <ul>
-        <li *ngFor="let movie of searchResults">
-            <img [src]="movie.imageUrl" alt="{{ movie.title }}">
-            <h4>{{ movie.title }}</h4>
-            <p>{{ movie.description }}</p>
-        </li>
-    </ul>
-</div>
-<div *ngIf="searchResults.length === 0 && searchTerm.length > 0">
-    <p>No movies found with the title "{{ searchTerm }}"</p>
+    <div *ngIf="searchResults.length > 0" class="px-3">
+        <h3 class="mt-4 mb-3">Search Results:</h3>
+        <div class="movie-grid">
+            <div (click)="goToMovieDetails(movie)" class="movie-card animate__animated animate__fadeIn"
+                *ngFor="let movie of searchResults.slice(0, 5); let i = index">
+                <img [src]="movie.imgCover" alt="{{ movie.title }}" class="img-fluid zoom-image">
+            </div>
+        </div>
+    </div>
+
+    <div *ngIf="searchResults.length === 0 && searchTerm.length > 0" class="w-100 mt-6 px-3">
+        <div>
+            <p class="d-flex justify-content-center aling-items-center">No movies found with the title "{{ searchTerm
+                }}"</p>
+        </div>
+    </div>
 </div>

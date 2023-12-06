@@ -85,6 +85,15 @@
     margin-right: 0;
 }
 
+.dropdown-toggle {
+    background-color: #131313;
+    border: none;
+}
+
+.dropdown-menu {
+    background-color: #131313;
+}
+
 .movie-covers {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
@@ -148,17 +157,17 @@
     &:hover .info {
         transform: translateY(0);
     }
+}
 
-    .btn-youtube {
-        background-color: #fe0002;
-        border-radius: 12px;
-        padding: 10px 24px;
-        border: none;
-        color: #fff;
-        transition: 0.2s;
-    }
+.btn-youtube {
+    background-color: #fe0002;
+    border-radius: 8px;
+    padding: 10px 24px;
+    border: none;
+    color: #fff;
+    transition: 0.2s;
+}
 
-    .btn-youtube:hover {
-        background-color: #bd0000;
-    }
+.btn-youtube:hover {
+    background-color: #970000;
 }

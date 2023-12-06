@@ -1,1 +1,43 @@
-<p>movie-details works!</p>
+<div class="parallax-bg animate__animated animate__fadeIn" [style.backgroundImage]="'url(' + bgImageUrl + ')'">
+
+</div>
+<div class="container">
+    <div class="d-flex justify-content-center align-item-center">
+
+        <div class="container py-7">
+            <div class="row align-items-center">
+                <div class="col-md-6 d-flex justify-content-center">
+                    <img [src]="movie.imageUrl" alt="Movie image" class="img-fluid custom-img-size">
+                </div>
+                <div class="col-md-6 mt-4 mt-md-0 info-movie">
+                    <div>
+                        <h1>{{ movie.title }}</h1>
+                        <p>{{ movie.releasedDate }}</p>
+                    </div>
+                    <div class="d-flex gap-2 align-items-center">
+                        <div class="radial-bar">
+                            <div class="circle">
+                                <div class="rating-number">{{ movie.rating }}</div>
+                            </div>
+                        </div>
+                        <ng-container *ngFor="let genre of movie.genre">
+                            <span class="genre">{{ genre.trim() }}</span>
+                        </ng-container>
+                    </div>
+                    <p>Duration: {{ movie.duration }}</p>
+                    <p style="text-align: justify;">{{ movie.description }}</p>
+                    <div class="d-flex gap-4">
+                        <button type="button" class="btn-youtube" (click)="scrollToVideo()">▶&nbsp; WATCH NOW</button>
+                        <button type="button" class="btn-add"><i class="mdi mdi-plus"></i></button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="py-10 mt-5 w-100" style="height: 50rem;">
+                <h3>Trailer</h3>
+                <iframe #videoElement class="movie-trailer" [src]="safeTrailerUrl"></iframe>
+            </div>
+        </div>
+
+    </div>
+</div>
