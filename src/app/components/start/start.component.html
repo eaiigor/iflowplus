@@ -65,7 +65,7 @@
                             <div class="info">
                                 <h5>{{ movie.title }}</h5>
                                 <div class="d-flex justify-content-between aling-items-center">
-                                    <p>⭐ {{ movie.rating }}</p>
+                                    <p>⭐ {{ movie.rating | number : '1.1' }}</p>
                                     <i *ngIf="isMovieInList(movie)" class="mdi mdi-eye-check-outline my-list-icon"></i>
                                 </div>
                             </div>
