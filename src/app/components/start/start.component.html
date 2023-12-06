@@ -20,7 +20,7 @@
                             <p class="text-start">{{ movie.description }}</p>
                         </div>
                         <div class="d-flex justify-content-start mt-2">
-                            <button type="button" class="btn-youtube" (click)="goToMovieDetails(movie)">▶&nbsp; WATCH NOW</button>
+                            <button type="button" class="btn-youtube" (click)="goToMovieDetails(movie)"><i class="mdi mdi-play"></i>&nbsp; WATCH NOW</button>
                         </div>
                     </div>
                 </div>
@@ -59,7 +59,7 @@
                     <img [src]="movie.imageUrl" alt="Movie image">
                     <div class="overlay" [ngClass]="{ 'show': showInfo }">
                         <div class="d-flex justify-content-center">
-                            <button type="button" class="btn-youtube">▶</button>
+                            <button type="button" class="btn-youtube"><i class="mdi mdi-play"></i></button>
                         </div>
                         <div class="overlay-infos">
                             <div class="info">
